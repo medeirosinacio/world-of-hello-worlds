@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  app:
+    image: openjdk:8-jdk
+    command: sh -c "echo 'Compiling Main.java...' && javac Main.java && echo 'Starting class...' && java Main"
+    working_dir: /app
+    volumes:
+      - .:/app
+    ports:
+      - "8080:8080"
